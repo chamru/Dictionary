@@ -3,7 +3,7 @@ package com.example.dictionary;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Capital extends AppCompatActivity {
+public class CapitalActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
