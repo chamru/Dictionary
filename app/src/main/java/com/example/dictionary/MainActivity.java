@@ -2,9 +2,12 @@ package com.example.dictionary;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.WebView;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Dictionary;
@@ -44,5 +47,14 @@ public class MainActivity<map> extends AppCompatActivity {
 
         );
         lv.setAdapter(countryAdapter);
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String countrys=parent.getItemAtPosition(position).toString();
+                String capital=country.get(countrys);
+                Toast.makeText(getApplicationContext(),capital.toString(),Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
